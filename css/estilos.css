@@ -1,0 +1,468 @@
+/* =========================================================================
+   SHIELDETHICS — Manual Operativo del Ingeniero
+   Sistema de diseño: "Expediente de Ingeniería"
+   La estética se inspira en los legajos de auditoría técnica y los planos
+   de ingeniería: fondo tipo plano azul (blueprint), tarjetas que imitan
+   carpetas de expediente con sello de revisión, y tipografía que mezcla
+   una mano técnica (mono) con una mano editorial (serif) para transmitir
+   la doble naturaleza del proyecto: normativa + argumento humano.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root{
+  /* --- paleta base (plano de ingeniería) --- */
+  --ink:            #0A1626;
+  --ink-2:          #0F1E33;
+  --panel:          #122340;
+  --panel-line:     rgba(146, 180, 214, 0.14);
+  --grid-line:      rgba(146, 180, 214, 0.055);
+
+  /* --- papel del expediente --- */
+  --paper:          #EDE6D6;
+  --paper-2:        #E2D8C0;
+  --paper-ink:       #211C13;
+  --paper-ink-soft: #4A4230;
+
+  /* --- texto sobre el plano --- */
+  --text:           #E7EEF6;
+  --text-muted:     #8FA9C6;
+  --text-faint:     #5C7594;
+
+  /* --- acento de autoridad / sello --- */
+  --amber:          #D6A733;
+  --amber-deep:     #A97C1B;
+
+  /* --- pilares --- */
+  --p1: #4E80C4;  /* Ética Profesional — azul institucional */
+  --p2: #C0432B;  /* Ciberseguridad — rojo alerta */
+  --p3: #8C63C7;  /* IA y Sociedad — morado */
+  --p4: #3E8C5C;  /* Sostenibilidad — verde técnico */
+
+  --radius: 3px;
+  --serif: 'IBM Plex Serif', Georgia, serif;
+  --display: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+  --mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0;
+  background:
+    linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/48px 48px,
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/48px 48px,
+    var(--ink);
+  color:var(--text);
+  font-family:var(--serif);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:inherit; }
+img{ max-width:100%; }
+
+::selection{ background:var(--amber); color:var(--ink); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:0.001ms !important; transition-duration:0.001ms !important; }
+}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+  outline:2px solid var(--amber);
+  outline-offset:3px;
+}
+
+.contenedor{
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* =========================================================================
+   NAV
+   ========================================================================= */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(10,22,38,0.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--panel-line);
+}
+.nav-inner{
+  max-width:1120px; margin:0 auto; padding:0 28px;
+  height:64px; display:flex; align-items:center; justify-content:space-between;
+}
+.marca{
+  display:flex; align-items:baseline; gap:10px;
+  font-family:var(--display); font-weight:700; letter-spacing:0.01em;
+  font-size:1.05rem; text-decoration:none; color:var(--text);
+}
+.marca .icono-escudo{
+  width:20px; height:20px; flex:none;
+}
+.marca small{
+  font-family:var(--mono); font-weight:400; font-size:0.62rem;
+  color:var(--amber); letter-spacing:0.14em; text-transform:uppercase;
+}
+.nav-links{ display:flex; gap:6px; list-style:none; margin:0; padding:0; }
+.nav-links a{
+  display:flex; align-items:center; gap:7px;
+  font-family:var(--mono); font-size:0.74rem; letter-spacing:0.05em;
+  text-transform:uppercase; text-decoration:none;
+  color:var(--text-muted); padding:10px 14px; border-radius:var(--radius);
+  transition:color .15s ease, background .15s ease;
+}
+.nav-links a:hover{ color:var(--text); background:var(--panel); }
+.nav-links a.activo{ color:var(--amber); }
+.nav-links a .n{ color:var(--text-faint); }
+
+@media (max-width:720px){
+  .nav-links span.texto{ display:none; }
+  .nav-links a{ padding:10px 10px; }
+}
+
+/* =========================================================================
+   SELLO / ETIQUETAS TIPO EXPEDIENTE
+   ========================================================================= */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--mono); font-size:0.72rem; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--amber);
+  border:1px solid rgba(214,167,51,0.4);
+  padding:5px 11px; border-radius:2px;
+}
+.eyebrow::before{ content:"§"; color:var(--amber-deep); }
+
+.sello{
+  position:absolute; top:16px; right:16px;
+  font-family:var(--mono); font-size:0.62rem; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--amber);
+  border:1.5px solid var(--amber);
+  padding:4px 8px; border-radius:2px;
+  transform:rotate(4deg);
+  opacity:0.85;
+}
+
+/* =========================================================================
+   HERO
+   ========================================================================= */
+.hero{
+  padding:96px 0 72px;
+  border-bottom:1px solid var(--panel-line);
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 50% at 82% 0%, rgba(78,128,196,0.16), transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:end;
+  position:relative;
+}
+@media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+
+.hero h1{
+  font-family:var(--display); font-weight:700;
+  font-size:clamp(2.3rem, 4.4vw, 3.6rem);
+  line-height:1.08; letter-spacing:-0.01em;
+  margin:22px 0 20px; color:var(--text);
+}
+.hero h1 em{ font-style:normal; color:var(--amber); }
+.hero p.lead{
+  font-size:1.06rem; color:var(--text-muted); max-width:52ch; margin:0 0 30px;
+}
+.hero-acciones{ display:flex; gap:14px; flex-wrap:wrap; }
+
+.expediente-mini{
+  border:1px solid var(--panel-line); background:var(--panel);
+  border-radius:var(--radius); padding:20px 22px;
+  font-family:var(--mono); font-size:0.78rem; color:var(--text-muted);
+}
+.expediente-mini .fila{
+  display:flex; justify-content:space-between; padding:7px 0;
+  border-bottom:1px dashed var(--panel-line);
+}
+.expediente-mini .fila:last-child{ border-bottom:none; }
+.expediente-mini .fila b{ color:var(--text); font-weight:500; }
+
+/* =========================================================================
+   BOTONES
+   ========================================================================= */
+.btn{
+  display:inline-flex; align-items:center; gap:9px;
+  font-family:var(--mono); font-size:0.78rem; letter-spacing:0.04em;
+  text-transform:uppercase; text-decoration:none; cursor:pointer;
+  padding:13px 22px; border-radius:2px; border:1px solid transparent;
+  transition:transform .12s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover{ transform:translateY(-1px); }
+.btn-primario{ background:var(--amber); color:var(--ink); font-weight:600; }
+.btn-primario:hover{ background:#E4B948; }
+.btn-secundario{ background:transparent; color:var(--text); border-color:var(--panel-line); }
+.btn-secundario:hover{ border-color:var(--text-muted); }
+.btn-foro{ background:var(--ink-2); color:var(--amber); border-color:rgba(214,167,51,0.35); }
+.btn-foro:hover{ border-color:var(--amber); }
+
+/* =========================================================================
+   PILARES — tarjetas tipo carpeta de expediente
+   ========================================================================= */
+.seccion{ padding:76px 0; }
+.seccion-cabecera{ max-width:64ch; margin-bottom:44px; }
+.seccion-cabecera h2{
+  font-family:var(--display); font-size:clamp(1.6rem,2.6vw,2.1rem);
+  margin:14px 0 12px; color:var(--text);
+}
+.seccion-cabecera p{ color:var(--text-muted); }
+
+.pilares-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:22px;
+}
+@media (max-width:760px){ .pilares-grid{ grid-template-columns:1fr; } }
+
+.carpeta{
+  --acento: var(--p1);
+  position:relative;
+  background:var(--paper);
+  color:var(--paper-ink);
+  border-radius:2px;
+  padding:26px 26px 24px;
+  min-height:230px;
+  text-decoration:none;
+  display:block;
+  box-shadow:0 1px 0 rgba(0,0,0,0.2), 0 14px 30px -18px rgba(0,0,0,0.55);
+  transition:transform .18s ease, box-shadow .18s ease;
+  border-top:6px solid var(--acento);
+}
+.carpeta:hover{
+  transform:translateY(-4px);
+  box-shadow:0 1px 0 rgba(0,0,0,0.2), 0 22px 40px -18px rgba(0,0,0,0.65);
+}
+.carpeta::before{
+  /* pestaña de carpeta */
+  content:attr(data-exp);
+  position:absolute; top:-15px; left:26px;
+  background:var(--acento); color:var(--ink);
+  font-family:var(--mono); font-size:0.66rem; letter-spacing:0.08em;
+  padding:4px 10px; border-radius:2px 2px 0 0;
+  font-weight:600;
+}
+.carpeta .sello{ color:var(--acento); border-color:var(--acento); opacity:0.7; }
+.carpeta h3{
+  font-family:var(--display); font-weight:600; font-size:1.28rem;
+  margin:6px 0 10px; padding-right:70px; color:var(--paper-ink);
+}
+.carpeta p{ color:var(--paper-ink-soft); font-size:0.92rem; margin:0 0 18px; }
+.carpeta .autores{
+  font-family:var(--mono); font-size:0.68rem; color:var(--paper-ink-soft);
+  letter-spacing:0.03em; border-top:1px dashed rgba(33,28,19,0.28);
+  padding-top:12px; display:flex; justify-content:space-between; align-items:center;
+}
+.carpeta .ir{ color:var(--acento); font-weight:700; }
+
+.carpeta.p1{ --acento:var(--p1); }
+.carpeta.p2{ --acento:var(--p2); }
+.carpeta.p3{ --acento:var(--p3); }
+.carpeta.p4{ --acento:var(--p4); }
+
+/* =========================================================================
+   CAJA DE RECURSOS / CAPAS DE CONTENIDO (páginas de pilar)
+   ========================================================================= */
+.migas{
+  font-family:var(--mono); font-size:0.74rem; color:var(--text-faint);
+  padding:22px 0 0;
+}
+.migas a{ color:var(--text-muted); text-decoration:none; }
+.migas a:hover{ color:var(--amber); }
+
+.pilar-hero{
+  padding:26px 0 46px;
+  border-bottom:1px solid var(--panel-line);
+}
+.pilar-hero .tag{ color:var(--acento-pilar); }
+.pilar-hero h1{
+  font-family:var(--display); font-size:clamp(2rem,4vw,2.7rem);
+  margin:16px 0 14px;
+}
+.pilar-hero p{ color:var(--text-muted); max-width:60ch; }
+
+.capa{
+  padding:52px 0; border-bottom:1px solid var(--panel-line);
+}
+.capa-titulo{
+  display:flex; align-items:center; gap:12px; margin-bottom:26px;
+}
+.capa-titulo .num{
+  font-family:var(--mono); font-size:0.72rem; color:var(--ink);
+  background:var(--acento-pilar); padding:4px 9px; border-radius:2px; font-weight:700;
+}
+.capa-titulo h2{ font-family:var(--display); font-size:1.5rem; margin:0; }
+
+.norma-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+}
+@media (max-width:760px){ .norma-grid{ grid-template-columns:1fr; } }
+.norma{
+  background:var(--panel); border:1px solid var(--panel-line);
+  border-left:3px solid var(--acento-pilar);
+  padding:18px 18px; border-radius:2px;
+}
+.norma b{ display:block; font-family:var(--display); font-size:0.96rem; margin-bottom:6px; }
+.norma span{ color:var(--text-muted); font-size:0.86rem; }
+
+.dilema{
+  background:var(--paper); color:var(--paper-ink);
+  border-radius:2px; padding:30px 32px; position:relative;
+  border-top:6px solid var(--acento-pilar);
+}
+.dilema .sello{ color:var(--acento-pilar); border-color:var(--acento-pilar); }
+.dilema h3{ font-family:var(--display); margin:8px 0 14px; padding-right:110px; }
+.dilema p{ color:var(--paper-ink-soft); }
+.dilema .opciones{ margin-top:20px; display:grid; gap:10px; }
+.dilema .opciones div{
+  font-family:var(--mono); font-size:0.84rem;
+  border:1px dashed rgba(33,28,19,0.35); border-radius:2px;
+  padding:11px 14px;
+}
+.dilema .opciones b{ color:var(--acento-pilar); }
+
+.recursos{ display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+@media (max-width:760px){ .recursos{ grid-template-columns:1fr; } }
+.recurso{
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  background:var(--panel); border:1px solid var(--panel-line);
+  padding:16px 18px; border-radius:2px; text-decoration:none; color:var(--text);
+}
+.recurso:hover{ border-color:var(--acento-pilar); }
+.recurso small{ display:block; color:var(--text-muted); font-family:var(--mono); font-size:0.72rem; margin-top:4px; }
+.recurso .flecha{ color:var(--acento-pilar); font-family:var(--mono); }
+
+.cta-foro{
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  flex-wrap:wrap;
+  background:var(--ink-2); border:1px solid var(--panel-line);
+  padding:26px 28px; border-radius:2px; margin-top:8px;
+}
+.cta-foro p{ margin:0; color:var(--text-muted); max-width:48ch; }
+.cta-foro strong{ color:var(--text); }
+
+/* páginas de pilar: acento por color, definido inline vía style */
+.p1-tema{ --acento-pilar:var(--p1); }
+.p2-tema{ --acento-pilar:var(--p2); }
+.p3-tema{ --acento-pilar:var(--p3); }
+.p4-tema{ --acento-pilar:var(--p4); }
+
+/* =========================================================================
+   SIMULADOR
+   ========================================================================= */
+.simulador-shell{ padding:52px 0 90px; }
+
+.simulador-intro{
+  text-align:center; max-width:60ch; margin:0 auto 40px;
+}
+.simulador-intro h1{
+  font-family:var(--display); font-size:clamp(1.9rem,3.6vw,2.5rem); margin:16px 0 12px;
+}
+.modo-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:12px; max-width:900px; margin:0 auto;
+}
+@media (max-width:820px){ .modo-grid{ grid-template-columns:repeat(2,1fr); } }
+.modo-card{
+  background:var(--panel); border:1px solid var(--panel-line);
+  border-radius:2px; padding:18px 14px; text-align:left; cursor:pointer;
+  color:var(--text); font-family:inherit; font-size:0.86rem;
+  border-top:4px solid var(--m-acento, var(--amber));
+  transition:transform .12s ease, border-color .12s ease;
+}
+.modo-card:hover{ transform:translateY(-3px); border-color:var(--m-acento, var(--amber)); }
+.modo-card b{ display:block; font-family:var(--display); font-size:0.95rem; margin-bottom:6px; }
+.modo-card span{ color:var(--text-muted); font-size:0.78rem; }
+
+#zona-juego{ display:none; max-width:760px; margin:0 auto; }
+#zona-juego.activo{ display:block; }
+
+.barra-progreso{
+  display:flex; align-items:center; gap:14px; margin-bottom:28px;
+  font-family:var(--mono); font-size:0.74rem; color:var(--text-muted);
+}
+.barra-progreso .pista{
+  flex:1; height:6px; background:var(--panel); border-radius:3px; overflow:hidden;
+  border:1px solid var(--panel-line);
+}
+.barra-progreso .relleno{
+  height:100%; background:var(--amber); width:0%; transition:width .35s ease;
+}
+
+.tarjeta-caso{
+  background:var(--paper); color:var(--paper-ink);
+  border-radius:2px; padding:34px 34px 30px; position:relative;
+  border-top:6px solid var(--amber-deep);
+}
+.tarjeta-caso .sello{ color:var(--amber-deep); border-color:var(--amber-deep); }
+.tarjeta-caso h2{ font-family:var(--display); font-size:1.4rem; margin:10px 0 16px; padding-right:110px; }
+.tarjeta-caso p.situacion{ color:var(--paper-ink-soft); margin-bottom:24px; }
+
+.opciones-juego{ display:grid; gap:12px; }
+.opcion-btn{
+  text-align:left; background:transparent; cursor:pointer;
+  border:1.5px solid rgba(33,28,19,0.3); border-radius:2px;
+  padding:14px 16px; font-family:var(--serif); font-size:0.95rem; color:var(--paper-ink);
+  transition:border-color .12s ease, background .12s ease;
+}
+.opcion-btn:hover{ border-color:var(--paper-ink); background:rgba(33,28,19,0.05); }
+.opcion-btn b{ font-family:var(--mono); color:var(--amber-deep); margin-right:8px; }
+.opcion-btn.elegida{ border-color:var(--amber-deep); background:rgba(169,124,27,0.1); }
+.opcion-btn:disabled{ cursor:default; opacity:0.75; }
+
+.retro{
+  margin-top:20px; padding:16px 18px; border-radius:2px;
+  font-size:0.9rem; border-left:4px solid var(--amber-deep);
+  background:rgba(169,124,27,0.08); color:var(--paper-ink-soft);
+  display:none;
+}
+.retro.activo{ display:block; }
+
+.acciones-caso{ display:flex; justify-content:flex-end; margin-top:22px; }
+
+.resultado{ display:none; }
+.resultado.activo{ display:block; }
+.resultado-cabecera{ text-align:center; margin-bottom:30px; }
+.resultado-cabecera .eyebrow{ margin-bottom:14px; }
+.resultado-cabecera h2{ font-family:var(--display); font-size:1.9rem; margin:0 0 10px; }
+.resultado-cabecera p{ color:var(--text-muted); }
+
+.perfil-tarjeta{
+  background:var(--paper); color:var(--paper-ink); border-radius:2px;
+  padding:30px 32px; border-top:6px solid var(--perfil-color, var(--amber));
+  margin-bottom:26px;
+}
+.perfil-tarjeta .sello{ color:var(--perfil-color, var(--amber-deep)); border-color:var(--perfil-color, var(--amber-deep)); }
+.perfil-tarjeta h3{ font-family:var(--display); font-size:1.5rem; margin:8px 0 10px; padding-right:110px; }
+.perfil-tarjeta p{ color:var(--paper-ink-soft); }
+
+.barras-categoria{ display:grid; gap:14px; margin:24px 0 30px; }
+.barra-cat{ display:grid; grid-template-columns:150px 1fr 50px; align-items:center; gap:12px; font-family:var(--mono); font-size:0.76rem; }
+.barra-cat .pista{ height:8px; background:var(--panel); border-radius:4px; overflow:hidden; border:1px solid var(--panel-line); }
+.barra-cat .relleno{ height:100%; }
+.barra-cat .relleno.etica{ background:var(--p1); }
+.barra-cat .relleno.impacto{ background:var(--p4); }
+.barra-cat .relleno.viabilidad{ background:var(--p2); }
+
+.resultado-acciones{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+footer{
+  border-top:1px solid var(--panel-line); padding:44px 0 60px;
+  color:var(--text-faint); font-family:var(--mono); font-size:0.76rem;
+}
+footer .footer-grid{
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;
+}
+footer a{ color:var(--text-muted); text-decoration:none; }
+footer a:hover{ color:var(--amber); }
