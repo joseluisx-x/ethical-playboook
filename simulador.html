@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador de Dilemas — ShieldEthics</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="marca">
+      <svg class="icono-escudo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L4 5v6c0 5.2 3.4 9.7 8 11 4.6-1.3 8-5.8 8-11V5l-8-3z" stroke="#D6A733" stroke-width="1.6"/>
+        <path d="M9 12l2 2 4-4" stroke="#D6A733" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      ShieldEthics <small>Expediente v1.0</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html"><span class="n">01</span><span class="texto">Inicio</span></a></li>
+      <li><a href="simulador.html" class="activo"><span class="n">02</span><span class="texto">Simulador</span></a></li>
+      <li><a href="https://github.com" target="_blank" rel="noopener"><span class="n">03</span><span class="texto">Foro</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="simulador-shell">
+  <div class="contenedor">
+
+    <div id="panel-modos">
+      <div class="simulador-intro">
+        <span class="eyebrow">Evaluación interactiva</span>
+        <h1>Simulador de Dilemas</h1>
+        <p>Elige un pilar específico o el Test General de Ética. Al final recibirás un perfil de ingeniero según tus decisiones, no una nota numérica tradicional.</p>
+      </div>
+
+      <div class="modo-grid" id="modo-grid">
+        <button class="modo-card" data-modo="p1" style="--m-acento:#4E80C4;">
+          <b>Pilar 01</b>
+          <span>Ética Profesional y Propiedad Intelectual</span>
+        </button>
+        <button class="modo-card" data-modo="p2" style="--m-acento:#C0432B;">
+          <b>Pilar 02</b>
+          <span>Ciberseguridad y Privacidad</span>
+        </button>
+        <button class="modo-card" data-modo="p3" style="--m-acento:#8C63C7;">
+          <b>Pilar 03</b>
+          <span>Inteligencia Artificial y Sociedad</span>
+        </button>
+        <button class="modo-card" data-modo="p4" style="--m-acento:#3E8C5C;">
+          <b>Pilar 04</b>
+          <span>Sostenibilidad y Green IT</span>
+        </button>
+        <button class="modo-card" data-modo="general" style="--m-acento:#D6A733;">
+          <b>Test General</b>
+          <span>Mezcla los 4 pilares</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="zona-juego">
+
+      <div id="zona-caso">
+        <div class="barra-progreso">
+          <span id="etiqueta-progreso">Expediente 1 de 4</span>
+          <div class="pista"><div class="relleno" id="relleno-progreso"></div></div>
+        </div>
+
+        <div class="tarjeta-caso">
+          <span class="sello" id="caso-exp">EXP-00</span>
+          <h2 id="caso-titulo">Título del caso</h2>
+          <p class="situacion" id="caso-situacion">Situación del caso...</p>
+
+          <div class="opciones-juego" id="caso-opciones"></div>
+
+          <div class="retro" id="caso-retro"></div>
+
+          <div class="acciones-caso">
+            <button class="btn btn-primario" id="btn-siguiente" style="display:none;">Siguiente expediente →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultado" id="resultado">
+        <div class="resultado-cabecera">
+          <span class="eyebrow">Dictamen final</span>
+          <h2>Tu perfil de ingeniero</h2>
+          <p>Basado en las decisiones que tomaste a lo largo de esta simulación.</p>
+        </div>
+
+        <div class="perfil-tarjeta" id="perfil-tarjeta">
+          <span class="sello">Dictamen</span>
+          <h3 id="perfil-nombre">—</h3>
+          <p id="perfil-texto">—</p>
+        </div>
+
+        <div class="barras-categoria">
+          <div class="barra-cat">
+            <span>Ética profesional</span>
+            <div class="pista"><div class="relleno etica" id="barra-etica"></div></div>
+            <span id="valor-etica">0</span>
+          </div>
+          <div class="barra-cat">
+            <span>Impacto social</span>
+            <div class="pista"><div class="relleno impacto" id="barra-impacto"></div></div>
+            <span id="valor-impacto">0</span>
+          </div>
+          <div class="barra-cat">
+            <span>Viabilidad técnica</span>
+            <div class="pista"><div class="relleno viabilidad" id="barra-viabilidad"></div></div>
+            <span id="valor-viabilidad">0</span>
+          </div>
+        </div>
+
+        <div class="resultado-acciones">
+          <button class="btn btn-secundario" id="btn-reiniciar">↺ Probar otro pilar</button>
+          <a href="https://github.com" target="_blank" rel="noopener" class="btn btn-foro">💬 Comparte tu perfil en el foro</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="contenedor footer-grid">
+    <span>ShieldEthics — Simulador de Dilemas.</span>
+    <span><a href="index.html">← Volver al inicio</a></span>
+  </div>
+</footer>
+
+<script src="js/preguntas.js"></script>
+<script src="js/simulador.js"></script>
+</body>
+</html>
