@@ -470,26 +470,26 @@ footer a:hover{ color:var(--amber); }
 
 
 /* ========================================== */
-/* ESTILOS PARA EL MANUAL DE CRISIS / ACORDEÓN */
+/* PANEL DE CRISIS: TARJETAS DE ALERTA AL ESTILO TICKETS */
 /* ========================================== */
 
 .manual-incidentes {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
 }
 
-/* Usamos la etiqueta details nativa de HTML */
+/* 🔴 ESTADO CERRADO: Apariencia de Alerta Crítica/Ticket de Error */
 .ficha-acordeon {
-    background-color: #0b132b; 
+    background-color: #0b132b;
     border-radius: 6px;
-    border-left: 5px solid #D6A733; /* Color dorado de tu proyecto ShieldEthics */
+    border-left: 5px solid #ff4d4d; /* Rojo brillante: Simula una alarma activa */
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
-/* La cabecera interactiva del acordeón */
+/* La cabecera del incidente */
 .ficha-acordeon summary {
     padding: 18px 20px;
     display: flex;
@@ -500,19 +500,59 @@ footer a:hover{ color:var(--amber); }
     color: #ffffff;
     font-size: 1.05rem;
     font-weight: bold;
-    list-style: none; /* Quita la flecha fea por defecto */
+    list-style: none;
 }
 
-/* Quita la flecha en navegadores basados en Safari */
 .ficha-acordeon summary::-webkit-details-marker {
-    display: none;
+    display: none; /* Oculta la flecha nativa */
 }
 
-/* El texto que se revela al abrirse */
+/* El indicador "+" a la derecha */
+.ficha-acordeon summary .toggle-icon {
+    color: #ff4d4d;
+    font-size: 1.3rem;
+    transition: transform 0.2s ease;
+}
+
+/* 🟢 ESTADO ABIERTO: Cambia a modo "Solución Mitigada" automáticamente */
+.ficha-acordeon[open] {
+    background-color: #0d1b3e; /* Fondo sutilmente más claro */
+    border-left-color: #2ec4b6; /* El borde cambia a verde: ¡Crisis resuelta! */
+}
+
+/* El icono gira y cambia a verde */
+.ficha-acordeon[open] summary .toggle-icon {
+    transform: rotate(45deg); /* El "+" se vuelve un "×" para cerrar */
+    color: #2ec4b6;
+}
+
+/* El contenedor interno desplegable de La Jugada */
 .ficha-contenido {
-    padding: 15px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
     color: #a0aec0;
     font-size: 0.95rem;
     line-height: 1.6;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* Estilos internos para separar la Situación de la Jugada */
+.caso-bloque {
+    margin-top: 15px;
+}
+
+.caso-bloque.situacion strong {
+    color: #ffb703; /* Color naranja/amarillo para la advertencia */
+}
+
+.caso-bloque.jugada {
+    background-color: rgba(46, 196, 182, 0.05); /* Fondo verde sutil */
+    padding: 12px 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 196, 182, 0.15);
+    margin-top: 12px;
+}
+
+.caso-bloque.jugada strong {
+    color: #2ec4b6; /* Verde para la acción de éxito */
+}
+
