@@ -72,26 +72,125 @@
   </div>
 </section>
 
-<section class="seccion" style="background: var(--bg-dark); border-top: 1px solid var(--border);">
-  <div class="contenedor">
-    <div class="seccion-cabecera">
-      <span class="eyebrow">Casos Rápidos</span>
-      <h2>Soluciones Directas (ACM/IEEE)</h2>
+<!-- ========================================== -->
+<!-- CAPA 03: MANUAL DE CRISIS (PILAR 01 - AZUL)-->
+<!-- ========================================== -->
+<section class="capa">
+    <div class="contenedor">
+        
+        <!-- TÍTULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
+        <div class="capa-titulo" style="margin-bottom: 30px;">
+            <span class="num">Capa 03</span>
+            <h2>Manual de Crisis: Alertas Rápidas</h2>
+        </div>
+        
+        <!-- SUBTÍTULO ABAJO -->
+        <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de ACM e IEEE.</p>
+
+        <!-- CONTENEDOR DE LOS 4 TICKETS CORTOS AZULES -->
+        <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <style>
+                .ticket-critico {
+                    background-color: #0b132b !important;
+                    border-radius: 6px !important;
+                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    transition: all 0.3s ease;
+                }
+                .ticket-critico[open] {
+                    border-left-color: #0077b6 !important; /* Azul tecnológico de tu pilar */
+                    background-color: #0f1c3f !important;
+                }
+                .ticket-critico summary {
+                    padding: 20px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    cursor: pointer !important;
+                    color: #ffffff !important;
+                    font-weight: bold !important;
+                    list-style: none !important;
+                }
+                .ticket-critico summary::-webkit-details-marker { display: none; }
+                .ticket-critico[open] .txt-signo { color: #0077b6 !important; transform: rotate(45deg); }
+                
+                .bloque-alerta-interna { padding: 0 20px 20px 20px; }
+                .caja-situacion-amarilla {
+                    color: #ffb703 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin-bottom: 12px;
+                }
+                .caja-jugada-azul {
+                    background-color: rgba(0, 119, 182, 0.08) !important; /* Fondo azul sutil */
+                    border: 1px solid rgba(0, 119, 182, 0.2) !important;
+                    padding: 15px !important;
+                    border-radius: 4px !important;
+                    color: #e2e8f0 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                }
+                .caja-jugada-azul strong { color: #0077b6 !important; }
+            </style>
+
+            <!-- TICKET 1 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Copiar código de StackOverflow <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Copiaste código de StackOverflow para cerrar un ticket rápido y no sabes si es legal.</p>
+                    </div>
+                    <div class="caja-jugada-azul">
+                        <p><strong>🛠️ La Jugada:</strong> Revisa la licencia (MIT/GPL). Si pasa, pon la URL de origen en un comentario y salva tu portafolio.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 2 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Presiones drásticas del superior <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Tu jefe te ordena saltarte el QA y las pruebas de estrés para subir a producción ¡ya!</p>
+                    </div>
+                    <div class="caja-jugada-azul">
+                        <p><strong>🛠️ La Jugada:</strong> Deja el riesgo técnico registrado por Slack o correo. No firmes la aprobación. Cúbrete las espaldas.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 3 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Reutilización de código propietario <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Usas un algoritmo secreto de tu antiguo trabajo para resolver un bug actual.</p>
+                    </div>
+                    <div class="caja-jugada-azul">
+                        <p><strong>🛠️ La Jugada:</strong> Alto ahí, eso es espionaje industrial. Borra el archivo y reescribe la lógica usando librerías abiertas.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 4 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Plagio masivo asistido por IA <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Copiar sin revisar bloques sugeridos por Copilot que infringen derechos de autor.</p>
+                    </div>
+                    <div class="caja-jugada-azul">
+                        <p><strong>🛠️ La Jugada:</strong> Audita los fragmentos generados por IA, elimina patrones propietarios directos y valida contra repositorios públicos.</p>
+                    </div>
+                </div>
+            </details>
+
+        </div>
     </div>
-    <div class="guia-grid">
-      <div class="guia-item">
-        <h3>📋 Código de Internet</h3>
-        <p><strong>Situación:</strong> Usar código ajeno de StackOverflow o Copilot para avanzar rápido.</p>
-        <p><strong>Solución:</strong> Revisa que la licencia lo permita y deja la URL en un comentario del código.</p>
-      </div>
-      <div class="guia-item">
-        <h3>⚠️ Presiones del Jefe</h3>
-        <p><strong>Situación:</strong> Te ordenan saltarte las pruebas de calidad para entregar ya.</p>
-        <p><strong>Solución:</strong> Reporta el riesgo por escrito, prioriza la seguridad del sistema y no firmes una aprobación falsa.</p>
-      </div>
-    </div>
-  </div>
 </section>
+
 
   <section class="capa">
   <div class="contenedor">
