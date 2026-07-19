@@ -74,34 +74,34 @@
 
   
 <!-- ========================================== -->
-<!-- CAPA 03: MANUAL DE CRISIS (TEXTOS CORTOS)  -->
+<!-- CAPA 03: MANUAL DE CRISIS (PILAR 04 - VERDE)-->
 <!-- ========================================== -->
 <section class="capa">
     <div class="contenedor">
         
-        <!-- TITULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
+        <!-- TÍTULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
         <div class="capa-titulo" style="margin-bottom: 30px;">
-            <span class="num">Capa 03</span>
+            <span class="num">Capa 02</span>
             <h2>Manual de Crisis: Alertas Rápidas</h2>
         </div>
         
         <!-- SUBTÍTULO ABAJO -->
         <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Green IT.</p>
 
-        <!-- CONTENEDOR DE LOS 4 TICKETS CORTOS -->
+        <!-- CONTENEDOR DE LOS TICKETS CORTOS VERDES -->
         <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
             
             <style>
                 .ticket-critico {
                     background-color: #0b132b !important;
                     border-radius: 6px !important;
-                    border-left: 5px solid #ff4d4d !important;
+                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
                     overflow: hidden;
                     margin-bottom: 15px;
                     transition: all 0.3s ease;
                 }
                 .ticket-critico[open] {
-                    border-left-color: #2ec4b6 !important;
+                    border-left-color: #2ec4b6 !important; /* Verde de sostenibilidad */
                     background-color: #0f1c3f !important;
                 }
                 .ticket-critico summary {
@@ -125,7 +125,7 @@
                     margin-bottom: 12px;
                 }
                 .caja-jugada-verde {
-                    background-color: rgba(46, 196, 182, 0.08) !important;
+                    background-color: rgba(46, 196, 182, 0.08) !important; /* Fondo verde sutil */
                     border: 1px solid rgba(46, 196, 182, 0.2) !important;
                     padding: 15px !important;
                     border-radius: 4px !important;
@@ -156,7 +156,7 @@
                     <div class="caja-situacion-amarilla">
                         <p><strong>⚠️ Situación:</strong> La empresa tiene servidores físicos viejos encendidos 24/7 gastando luz a lo loco.</p>
                     </div>
-                    <div class="caja-jugada-verde">
+                    <div class="caja-verde-resaltada caja-jugada-verde">
                         <p><strong>🛠️ La Jugada:</strong> Migra la arquitectura a entornos Serverless o contenedores Docker que solo consumen energía si hay tráfico real.</p>
                     </div>
                 </div>
@@ -175,34 +175,14 @@
                 </div>
             </details>
 
-            <!-- TICKET 4 -->
-            <details class="ticket-critico">
-                <summary>🚨 Incidente: Servidores locales subutilizados <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
-                <div class="bloque-alerta-interna">
-                    <div class="caja-situacion-amarilla">
-                        <p><strong>⚠️ Situación:</strong> Cada aplicación corre en una máquina física independiente operando al mínimo de su capacidad.</p>
-                    </div>
-                    <div class="caja-jugada-verde">
-                        <p><strong>🛠️ La Jugada:</strong> Aplica virtualización eficiente. Consolida múltiples sistemas en un solo servidor físico usando hipervisores o la nube.</p>
-                    </div>
-                </div>
-            </details>
-
         </div>
     </div>
 </section>
 
-
-
-
-
-
-
-  
 <section class="capa">
   <div class="contenedor">
     <div class="capa-titulo">
-      <span class="num">Capa 02</span>
+      <span class="num">Capa 03</span>
       <h2>Dilema interactivo</h2>
     </div>
     <div class="dilema">
@@ -225,7 +205,7 @@
 <section class="capa" style="border-bottom:none;">
   <div class="contenedor">
     <div class="capa-titulo">
-      <span class="num">Capa 03</span>
+      <span class="num">Capa 04</span>
       <h2>Caja de recursos</h2>
     </div>
     <div class="recursos">
