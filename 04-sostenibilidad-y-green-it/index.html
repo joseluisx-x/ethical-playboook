@@ -74,19 +74,21 @@
 
   
 <!-- ========================================== -->
-<!-- CAPA 03: MANUAL DE CRISIS (CORREGIDO)      -->
+<!-- CAPA 03: MANUAL DE CRISIS (CORREGIDO AL 100%) -->
 <!-- ========================================== -->
 <section class="capa">
     <div class="contenedor">
         
-        <!-- TÍTULO CON LA ESTRUCTURA ORIGINAL VERDE -->
+        <!-- TITULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
         <div class="capa-titulo" style="margin-bottom: 30px;">
             <span class="num">Capa 03</span>
             <h2>Manual de Crisis: Alertas Rápidas</h2>
-            <p style="color: #a0aec0; margin-top: 10px;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Green IT.</p>
         </div>
+        
+        <!-- EL SUBTÍTULO VA ABAJO EN UN PÁRRAFO APARTE -->
+        <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Green IT.</p>
 
-        <!-- CONTENEDOR DE LOS TICKETS -->
+        <!-- CONTENEDOR DE LOS 4 TICKETS -->
         <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
             
             <style>
@@ -175,9 +177,23 @@
                 </div>
             </details>
 
+            <!-- TICKET 4: VIRTUALIZACIÓN EFICIENTE -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Infraestructura física subutilizada gastando energía <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Múltiples aplicaciones corren de forma aislada en servidores físicos independientes dentro de la oficina, operando a menos del 15% de su capacidad pero consumiendo el 100% de la luz de climatización.</p>
+                    </div>
+                    <div class="caja-jugada-verde">
+                        <p><strong>🛠️ La Jugada:</strong> Consolida las cargas utilizando virtualización eficiente. Migra los sistemas hacia contenedores Docker aislados en un solo servidor de alta eficiencia o adopta servicios en la nube con auto-escalado bajo demanda.</p>
+                    </div>
+                </div>
+            </details>
+
         </div>
     </div>
 </section>
+
 
 
 
