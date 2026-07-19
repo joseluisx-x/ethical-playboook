@@ -72,6 +72,127 @@
   </div>
 </section>
 
+<!-- ========================================== -->
+<!-- CAPA 03: MANUAL DE CRISIS (PILAR 03 - MORADO)-->
+<!-- ========================================== -->
+<section class="capa">
+    <div class="contenedor">
+        
+        <!-- TÍTULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
+        <div class="capa-titulo" style="margin-bottom: 30px;">
+            <span class="num">Capa 03</span>
+            <h2>Manual de Crisis: Alertas Rápidas</h2>
+        </div>
+        
+        <!-- SUBTÍTULO ABAJO -->
+        <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Inteligencia Artificial.</p>
+
+        <!-- CONTENEDOR DE LOS 4 TICKETS CORTOS MORADOS -->
+        <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <style>
+                .ticket-critico {
+                    background-color: #0b132b !important;
+                    border-radius: 6px !important;
+                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    transition: all 0.3s ease;
+                }
+                .ticket-critico[open] {
+                    border-left-color: #8a2be2 !important; /* Morado / Púrpura de IA */
+                    background-color: #0f1c3f !important;
+                }
+                .ticket-critico summary {
+                    padding: 20px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    cursor: pointer !important;
+                    color: #ffffff !important;
+                    font-weight: bold !important;
+                    list-style: none !important;
+                }
+                .ticket-critico summary::-webkit-details-marker { display: none; }
+                .ticket-critico[open] .txt-signo { color: #8a2be2 !important; transform: rotate(45deg); }
+                
+                .bloque-alerta-interna { padding: 0 20px 20px 20px; }
+                .caja-situacion-amarilla {
+                    color: #ffb703 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin-bottom: 12px;
+                }
+                .caja-jugada-morada {
+                    background-color: rgba(138, 43, 226, 0.08) !important; /* Fondo morado sutil */
+                    border: 1px solid rgba(138, 43, 226, 0.2) !important;
+                    padding: 15px !important;
+                    border-radius: 4px !important;
+                    color: #e2e8f0 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                }
+                .caja-jugada-morada strong { color: #8a2be2 !important; }
+            </style>
+
+            <!-- TICKET 1 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Algoritmo de IA con sesgo discriminatorio <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Tu algoritmo de IA rechaza solicitudes de personas basado en su género o zona residencial.</p>
+                    </div>
+                    <div class="caja-jugada-morada">
+                        <p><strong>🛠️ La Jugada:</strong> Apaga el modelo de inmediato. Tu dataset está contaminado. Audita y equilibra los datos de entrenamiento.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 2 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Diseño persuasivo invasivo en menores <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Te ordenan diseñar notificaciones basura y scrolls infinitos para enganchar a menores de edad.</p>
+                    </div>
+                    <div class="caja-jugada-morada">
+                        <p><strong>🛠️ La Jugada:</strong> Alerta el conflicto ético. Diseña interfaces limpias que respeten el tiempo de pantalla del usuario.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 3 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Automatización encubierta para despidos <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Te piden programar un software para automatizar tareas y despedir en secreto al 70% del equipo.</p>
+                    </div>
+                    <div class="caja-jugada-morada">
+                        <p><strong>🛠️ La Jugada:</strong> Exige transparencia. Aboga por un plan de reentrenamiento para el personal antes de soltar el script.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 4 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Generación de Deepfakes sin consentimiento <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Te ordenan usar modelos generativos para crear contenido sintético con la voz o rostro de un tercero sin su autorización expresa.</p>
+                    </div>
+                    <div class="caja-jugada-morada">
+                        <p><strong>🛠️ La Jugada:</strong> Detén el proceso. Todo sistema multimedia sintético debe contar con permisos explícitos y marcas de agua digitales de origen.</p>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+
+  
 <section class="capa">
   <div class="contenedor">
     <div class="capa-titulo">
