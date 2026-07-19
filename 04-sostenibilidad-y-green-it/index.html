@@ -74,7 +74,7 @@
 
   
 <!-- ========================================== -->
-<!-- CAPA 03: MANUAL DE CRISIS (CORREGIDO AL 100%) -->
+<!-- CAPA 03: MANUAL DE CRISIS (TEXTOS CORTOS)  -->
 <!-- ========================================== -->
 <section class="capa">
     <div class="contenedor">
@@ -85,24 +85,23 @@
             <h2>Manual de Crisis: Alertas Rápidas</h2>
         </div>
         
-        <!-- EL SUBTÍTULO VA ABAJO EN UN PÁRRAFO APARTE -->
+        <!-- SUBTÍTULO ABAJO -->
         <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Green IT.</p>
 
-        <!-- CONTENEDOR DE LOS 4 TICKETS -->
+        <!-- CONTENEDOR DE LOS 4 TICKETS CORTOS -->
         <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
             
             <style>
-                /* Estilos aislados para garantizar el diseño exacto de bitácora técnica */
                 .ticket-critico {
                     background-color: #0b132b !important;
                     border-radius: 6px !important;
-                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
+                    border-left: 5px solid #ff4d4d !important;
                     overflow: hidden;
                     margin-bottom: 15px;
                     transition: all 0.3s ease;
                 }
                 .ticket-critico[open] {
-                    border-left-color: #2ec4b6 !important; /* Verde: ¡Solucionado! */
+                    border-left-color: #2ec4b6 !important;
                     background-color: #0f1c3f !important;
                 }
                 .ticket-critico summary {
@@ -118,7 +117,6 @@
                 .ticket-critico summary::-webkit-details-marker { display: none; }
                 .ticket-critico[open] .txt-signo { color: #2ec4b6 !important; transform: rotate(45deg); }
                 
-                /* Cajas internas de contenido descriptivo */
                 .bloque-alerta-interna { padding: 0 20px 20px 20px; }
                 .caja-situacion-amarilla {
                     color: #ffb703 !important;
@@ -127,7 +125,7 @@
                     margin-bottom: 12px;
                 }
                 .caja-jugada-verde {
-                    background-color: rgba(46, 196, 182, 0.08) !important; /* Iluminación verde de éxito */
+                    background-color: rgba(46, 196, 182, 0.08) !important;
                     border: 1px solid rgba(46, 196, 182, 0.2) !important;
                     padding: 15px !important;
                     border-radius: 4px !important;
@@ -138,54 +136,54 @@
                 .caja-jugada-verde strong { color: #2ec4b6 !important; }
             </style>
 
-            <!-- TICKET 1: BUCLE DE CPU -->
+            <!-- TICKET 1 -->
             <details class="ticket-critico">
                 <summary>🚨 Incidente: Bucle ineficiente quemando CPU <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
                 <div class="bloque-alerta-interna">
                     <div class="caja-situacion-amarilla">
-                        <p><strong>⚠️ Situación:</strong> Un bucle mal optimizado está sobrecargando el procesamiento de los servidores y disparando el consumo eléctrico del Data Center de forma crítica.</p>
+                        <p><strong>⚠️ Situación:</strong> Un bucle mal optimizado está quemando CPU y disparando el consumo eléctrico del Data Center.</p>
                     </div>
                     <div class="caja-jugada-verde">
-                        <p><strong>🛠️ La Jugada:</strong> Aplica Green Coding de inmediato. Introduce sistemas de caché de datos, optimiza las consultas indexadas de la base de datos y mata los procesos fantasma para reducir los ciclos innecesarios de CPU.</p>
+                        <p><strong>🛠️ La Jugada:</strong> Aplica Green Coding. Mete caché, optimiza las consultas indexadas y mata los procesos fantasma.</p>
                     </div>
                 </div>
             </details>
 
-            <!-- TICKET 2: SERVIDORES ENCENDIDOS -->
+            <!-- TICKET 2 -->
             <details class="ticket-critico">
-                <summary>🚨 Incidente: Servidores de desarrollo encendidos 24/7 <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <summary>🚨 Incidente: Servidores físicos viejos encendidos 24/7 <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
                 <div class="bloque-alerta-interna">
                     <div class="caja-situacion-amarilla">
-                        <p><strong>⚠️ Situación:</strong> Los entornos de prueba y simulación se quedan encendidos de forma ininterrumpida durante los fines de semana consumiendo energía innecesaria en la nube.</p>
+                        <p><strong>⚠️ Situación:</strong> La empresa tiene servidores físicos viejos encendidos 24/7 gastando luz a lo loco.</p>
                     </div>
                     <div class="caja-jugada-verde">
-                        <p><strong>🛠️ La Jugada:</strong> Configura un script de automatización que apague de forma programada los servidores de desarrollo por las noches y fines de semana, optimizando el PUE y recortando la huella de carbono digital.</p>
+                        <p><strong>🛠️ La Jugada:</strong> Migra la arquitectura a entornos Serverless o contenedores Docker que solo consumen energía si hay tráfico real.</p>
                     </div>
                 </div>
             </details>
 
-            <!-- TICKET 3: RESIDUOS ELECTRÓNICOS -->
+            <!-- TICKET 3 -->
             <details class="ticket-critico">
-                <summary>🚨 Incidente: Eliminación irresponsable de hardware funcional <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <summary>🚨 Incidente: Eliminación irresponsable de hardware <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
                 <div class="bloque-alerta-interna">
                     <div class="caja-situacion-amarilla">
-                        <p><strong>⚠️ Situación:</strong> La gerencia planea tirar a la basura común decenas de computadoras y componentes funcionales solo para adquirir los modelos del año por cuestiones corporativas.</p>
+                        <p><strong>⚠️ Situación:</strong> Van a tirar a la basura común hardware funcional solo para comprar los modelos del año.</p>
                     </div>
                     <div class="caja-jugada-verde">
-                        <p><strong>🛠️ La Jugada:</strong> Frena el desperdicio electrónico (e-waste). Propón implementar un plan de economía circular: instala sistemas operativos ligeros (como Linux) para extender su vida útil, dona los equipos útiles a escuelas vulnerables o tramita su desecho final con empresas de reciclaje tecnológico certificado.</p>
+                        <p><strong>🛠️ La Jugada:</strong> Frena el desperdicio. Instala sistemas operativos ligeros (Linux), dona los equipos o recicla con certificación e-waste.</p>
                     </div>
                 </div>
             </details>
 
-            <!-- TICKET 4: VIRTUALIZACIÓN EFICIENTE -->
+            <!-- TICKET 4 -->
             <details class="ticket-critico">
-                <summary>🚨 Incidente: Infraestructura física subutilizada gastando energía <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <summary>🚨 Incidente: Servidores locales subutilizados <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
                 <div class="bloque-alerta-interna">
                     <div class="caja-situacion-amarilla">
-                        <p><strong>⚠️ Situación:</strong> Múltiples aplicaciones corren de forma aislada en servidores físicos independientes dentro de la oficina, operando a menos del 15% de su capacidad pero consumiendo el 100% de la luz de climatización.</p>
+                        <p><strong>⚠️ Situación:</strong> Cada aplicación corre en una máquina física independiente operando al mínimo de su capacidad.</p>
                     </div>
                     <div class="caja-jugada-verde">
-                        <p><strong>🛠️ La Jugada:</strong> Consolida las cargas utilizando virtualización eficiente. Migra los sistemas hacia contenedores Docker aislados en un solo servidor de alta eficiencia o adopta servicios en la nube con auto-escalado bajo demanda.</p>
+                        <p><strong>🛠️ La Jugada:</strong> Aplica virtualización eficiente. Consolida múltiples sistemas en un solo servidor físico usando hipervisores o la nube.</p>
                     </div>
                 </div>
             </details>
@@ -193,6 +191,7 @@
         </div>
     </div>
 </section>
+
 
 
 
