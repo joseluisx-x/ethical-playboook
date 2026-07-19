@@ -178,5 +178,21 @@
   </div>
 </footer>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const cabeceras = document.querySelectorAll(".ficha-cabecera");
+            cabeceras.forEach(cabecera => {
+                cabecera.addEventListener("click", () => {
+                    const ficha = cabecera.parentElement;
+                    ficha.classList.toggle("activo");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+  
 </body>
 </html>
