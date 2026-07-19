@@ -72,38 +72,87 @@
   </div>
 </section>
 
-<!-- NUEVA SECCIÓN: MANUAL DE CRISIS -->
-<section class="seccion" style="background: var(--bg-dark); border-top: 1px solid var(--border);">
+<!-- ========================================== -->
+<!-- PANEL DE CRISIS DEFINTIVO CON ESTILOS INTEGRADOS -->
+<!-- ========================================== -->
+<section class="seccion" style="background: var(--bg-dark); border-top: 1px solid var(--border); padding: 40px 0;">
     <div class="contenedor">
-        <div class="seccion-cabecera">
-            <span class="eyebrow">Manual de Crisis</span>
-            <h2>Alertas Rápidas e Incidentes</h2>
-            <p>Haz clic en cada reporte de error para desplegar la jugada de contención oficial.</p>
+        <div class="seccion-cabecera" style="margin-bottom: 30px;">
+            <span class="eyebrow" style="color: #ff4d4d; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Manual de Crisis</span>
+            <h2 style="color: #ffffff; margin-top: 5px;">Alertas Rápidas e Incidentes</h2>
+            <p style="color: #a0aec0;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial.</p>
         </div>
 
-        <div class="manual-incidentes">
+        <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
             
             <!-- TICKET 1 -->
-            <details class="ficha-acordeon">
-                <summary>🚨 Incidente: Bucle ineficiente quemando CPU <span class="toggle-icon">+</span></summary>
-                <div class="ficha-contenido">
-                    <div class="caso-bloque situacion">
+            <style>
+                /* Estilos forzados para garantizar el diseño exacto de bitácora */
+                .ticket-critico {
+                    background-color: #0b132b !important;
+                    border-radius: 6px !important;
+                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    transition: all 0.3s ease;
+                }
+                .ticket-critico[open] {
+                    border-left-color: #2ec4b6 !important; /* Verde: ¡Solucionado! */
+                    background-color: #0f1c3f !important;
+                }
+                .ticket-critico summary {
+                    padding: 20px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    cursor: pointer !important;
+                    color: #ffffff !important;
+                    font-weight: bold !important;
+                    list-style: none !important;
+                }
+                .ticket-critico summary::-webkit-details-marker { display: none; }
+                .ticket-critico[open] .txt-signo { color: #2ec4b6 !important; transform: rotate(45deg); }
+                
+                /* Cajas internas de contenido descriptivo */
+                .bloque-alerta-interna { padding: 0 20px 20px 20px; }
+                .caja-situacion-amarilla {
+                    color: #ffb703 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin-bottom: 12px;
+                }
+                .caja-jugada-verde {
+                    background-color: rgba(46, 196, 182, 0.08) !important; /* Iluminación verde de éxito */
+                    border: 1px solid rgba(46, 196, 182, 0.2) !important;
+                    padding: 15px !important;
+                    border-radius: 4px !important;
+                    color: #e2e8f0 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                }
+                .caja-jugada-verde strong { color: #2ec4b6 !important; }
+            </style>
+
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Bucle ineficiente quemando CPU <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
                         <p><strong>⚠️ Situación:</strong> Un bucle mal optimizado está sobrecargando el procesamiento de los servidores y disparando el consumo eléctrico del Data Center de forma crítica.</p>
                     </div>
-                    <div class="caso-bloque jugada">
+                    <div class="caja-jugada-verde">
                         <p><strong>🛠️ La Jugada:</strong> Aplica Green Coding de inmediato. Introduce sistemas de caché de datos, optimiza las consultas indexadas de la base de datos y mata los procesos fantasma para reducir los ciclos innecesarios de CPU.</p>
                     </div>
                 </div>
             </details>
 
             <!-- TICKET 2 -->
-            <details class="ficha-acordeon">
-                <summary>🚨 Incidente: Servidores de desarrollo encendidos 24/7 <span class="toggle-icon">+</span></summary>
-                <div class="ficha-contenido">
-                    <div class="caso-bloque situacion">
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Servidores de desarrollo encendidos 24/7 <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
                         <p><strong>⚠️ Situación:</strong> Los entornos de prueba y simulación se quedan encendidos de forma ininterrumpida durante los fines de semana consumiendo energía innecesaria en la nube.</p>
                     </div>
-                    <div class="caso-bloque jugada">
+                    <div class="caja-jugada-verde">
                         <p><strong>🛠️ La Jugada:</strong> Configura un script de automatización que apague de forma programada los servidores de desarrollo por las noches y fines de semana, optimizando el PUE y recortando la huella de carbono digital.</p>
                     </div>
                 </div>
@@ -112,6 +161,7 @@
         </div>
     </div>
 </section>
+
 
 
 
@@ -172,21 +222,6 @@
     <span><a href="../index.html">← Volver a los pilares</a></span>
   </div>
 </footer>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const cabeceras = document.querySelectorAll(".ficha-cabecera");
-            cabeceras.forEach(cabecera => {
-                cabecera.addEventListener("click", () => {
-                    const ficha = cabecera.parentElement;
-                    ficha.classList.toggle("activo");
-                });
-            });
-        });
-    </script>
-</body>
-</html>
 
   
 </body>
