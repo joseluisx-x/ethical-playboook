@@ -72,6 +72,128 @@
   </div>
 </section>
 
+<!-- ========================================== -->
+<!-- CAPA 03: MANUAL DE CRISIS (PILAR 02 - ROJO)-->
+<!-- ========================================== -->
+<section class="capa">
+    <div class="contenedor">
+        
+        <!-- TÍTULO CON LA ESTRUCTURA ORIGINAL NATIVA -->
+        <div class="capa-titulo" style="margin-bottom: 30px;">
+            <span class="num">Capa 03</span>
+            <h2>Manual de Crisis: Alertas Rápidas</h2>
+        </div>
+        
+        <!-- SUBTÍTULO ABAJO -->
+        <p style="color: #a0aec0; margin-bottom: 25px; font-size: 1rem;">Haz clic en cada reporte de error para desplegar la jugada de contención oficial de Seguridad.</p>
+
+        <!-- CONTENEDOR DE LOS 4 TICKETS CORTOS ROJO CORAL -->
+        <div class="manual-incidentes-criticos" style="display: flex; flex-direction: column; gap: 16px;">
+            
+            <style>
+                .ticket-critico {
+                    background-color: #0b132b !important;
+                    border-radius: 6px !important;
+                    border-left: 5px solid #ff4d4d !important; /* Rojo: Alerta inicial */
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                    transition: all 0.3s ease;
+                }
+                .ticket-critico[open] {
+                    border-left-color: #ff5722 !important; /* Rojo anaranjado / Coral de ciberseguridad */
+                    background-color: #0f1c3f !important;
+                }
+                .ticket-critico summary {
+                    padding: 20px !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    cursor: pointer !important;
+                    color: #ffffff !important;
+                    font-weight: bold !important;
+                    list-style: none !important;
+                }
+                .ticket-critico summary::-webkit-details-marker { display: none; }
+                .ticket-critico[open] .txt-signo { color: #ff5722 !important; transform: rotate(45deg); }
+                
+                .bloque-alerta-interna { padding: 0 20px 20px 20px; }
+                .caja-situacion-amarilla {
+                    color: #ffb703 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                    margin-bottom: 12px;
+                }
+                .caja-jugada-roja {
+                    background-color: rgba(255, 87, 34, 0.08) !important; /* Fondo coral sutil */
+                    border: 1px solid rgba(255, 87, 34, 0.2) !important;
+                    padding: 15px !important;
+                    border-radius: 4px !important;
+                    color: #e2e8f0 !important;
+                    font-size: 0.95rem;
+                    line-height: 1.6;
+                }
+                .caja-jugada-roja strong { color: #ff5722 !important; }
+            </style>
+
+            <!-- TICKET 1 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Falla "Zero-Day" un día antes del lanzamiento <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Encontraste un fallo crítico ("Zero-Day") un día antes del lanzamiento y te piden callarlo.</p>
+                    </div>
+                    <div class="caja-jugada-roja">
+                        <p><strong>🛠️ La Jugada:</strong> Frena el despliegue del módulo afectado, documenta el fallo y aplica parche antes de abrir los puertos.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 2 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Rastreo de ubicación oculto <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Marketing te pide rastrear la ubicación de los usuarios en segundo plano "en secreto".</p>
+                    </div>
+                    <div class="caja-jugada-roja">
+                        <p><strong>🛠️ La Jugada:</strong> Aplica privacidad por diseño. Pon un aviso explícito (Opt-in) o bloquéales el acceso a la API de GPS.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 3 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Ataque de Ransomware y extorsión <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Secuestraron la base de datos (Ransomware) y la empresa quiere pagar el rescate por debajo de la mesa.</p>
+                    </div>
+                    <div class="caja-jugada-roja">
+                        <p><strong>🛠️ La Jugada:</strong> Desconecta los servidores de la red, levanta los Backups offline y reporta a las autoridades. Nunca pagues.</p>
+                    </div>
+                </div>
+            </details>
+
+            <!-- TICKET 4 -->
+            <details class="ticket-critico">
+                <summary>🚨 Incidente: Monitoreo abusivo con Spyware corporativo <span class="txt-signo" style="color: #ff4d4d; font-size: 1.3rem; transition: all 0.2s;">+</span></summary>
+                <div class="bloque-alerta-interna">
+                    <div class="caja-situacion-amarilla">
+                        <p><strong>⚠️ Situación:</strong> Te ordenan desplegar herramientas espía para auditar cada pulsación de tecla y cámara de los empleados en remoto sin avisarles.</p>
+                    </div>
+                    <div class="caja-jugada-roja">
+                        <p><strong>🛠️ La Jugada:</strong> Detén la instalación. Exige aplicar vigilancia proporcional e informada únicamente para fines de seguridad legítimos.</p>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </div>
+</section>
+
+
+
+  
 <section class="capa">
   <div class="contenedor">
     <div class="capa-titulo">
