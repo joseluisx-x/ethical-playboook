@@ -468,66 +468,51 @@ footer a{ color:var(--text-muted); text-decoration:none; }
 footer a:hover{ color:var(--amber); }
 
 
+
 /* ========================================== */
-/* ESTILOS PARA EL MANUAL DE CRISIS (CAPA 03) */
+/* ESTILOS PARA EL MANUAL DE CRISIS / ACORDEÓN */
 /* ========================================== */
 
-/* Contenedor que agrupa todas las fichas */
 .manual-incidentes {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Separa una ficha de otra */
+    gap: 15px;
 }
 
-/* La tarjeta del incidente (Cerrada) */
+/* Usamos la etiqueta details nativa de HTML */
 .ficha-acordeon {
-    background-color: #0b132b; /* El mismo azul oscuro de tus tarjetas */
+    background-color: #0b132b; 
     border-radius: 6px;
-    border-left: 5px solid #2ec4b6; /* Borde grueso verde de sostenibilidad */
+    border-left: 5px solid #D6A733; /* Color dorado de tu proyecto ShieldEthics */
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
-/* La barra del título donde el usuario hace clic */
-.ficha-cabecera {
+/* La cabecera interactiva del acordeón */
+.ficha-acordeon summary {
     padding: 18px 20px;
     display: flex;
-    justify-content: space-between; /* Texto a la izquierda, "+" a la derecha */
+    justify-content: space-between;
     align-items: center;
-    cursor: pointer; /* Hace que el cursor sea una mano */
+    cursor: pointer;
     user-select: none;
-}
-
-.incidente-titulo {
     color: #ffffff;
     font-size: 1.05rem;
-}
-
-/* El icono del "+" */
-.icono-estado {
-    color: #2ec4b6;
-    font-size: 1.4rem;
     font-weight: bold;
-    transition: transform 0.2s ease;
+    list-style: none; /* Quita la flecha fea por defecto */
 }
 
-/* El contenedor del texto de la solución (Oculto por defecto) */
+/* Quita la flecha en navegadores basados en Safari */
+.ficha-acordeon summary::-webkit-details-marker {
+    display: none;
+}
+
+/* El texto que se revela al abrirse */
 .ficha-contenido {
-    display: none; /* Hace que no se vea al cargar la página */
-    padding: 0 20px 20px 20px; /* Margen interno para el texto */
-    color: #a0aec0; /* Gris suave para lectura cómoda */
+    padding: 15px 20px 20px 20px;
+    color: #a0aec0;
     font-size: 0.95rem;
     line-height: 1.6;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Línea divisoria sutil */
-}
-
-/* CLASES ACTIVAS: JavaScript las activará cuando el usuario haga clic */
-.ficha-acordeon.activo .ficha-contenido {
-    display: block; /* Muestra el texto oculto */
-}
-
-.ficha-acordeon.activo .icono-estado {
-    transform: rotate(45deg); /* Gira el "+" para que parezca una "X" o un "-" */
-    color: #e63946; /* Cambia a rojo cuando está abierto */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
